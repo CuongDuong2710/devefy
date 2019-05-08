@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() => runApp(MaterialApp(
       home: MyApp(),
@@ -13,6 +14,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
+    ScreenUtil.instance =
+        ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
+
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomPadding: true,
@@ -38,7 +43,37 @@ class _MyAppState extends State<MyApp> {
               child: Column(
                 children: <Widget>[
                   Row(
-                    children: <Widget>[Image.asset("assets/logo.png")],
+                    children: <Widget>[
+                      Image.asset(
+                        "assets/logo.png",
+                        width: ScreenUtil.getInstance().setWidth(110),
+                        height: ScreenUtil.getInstance().setHeight(110),
+                      ),
+                      Text(
+                        "LOGO",
+                        style: TextStyle(
+                            fontFamily: "Poppins-Bold.ttf",
+                            fontSize: ScreenUtil.getInstance().setSp(46),
+                            letterSpacing: .6,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: ScreenUtil.getInstance().setHeight(180),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    height: ScreenUtil.getInstance().setHeight(500),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8.0),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black12,
+                              offset: Offset(0.0, 15.0),
+                              blurRadius: 15.0)
+                        ]),
                   )
                 ],
               ),
