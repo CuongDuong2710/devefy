@@ -75,7 +75,7 @@ class _MyAppState extends State<MyApp> {
           ),
           SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.only(top: 60.0, left: 28.0, right: 28.0),
+              padding: EdgeInsets.only(top: 50.0, left: 28.0, right: 28.0),
               child: Column(
                 children: <Widget>[
                   Row(
@@ -213,6 +213,27 @@ class _MyAppState extends State<MyApp> {
                         ],
                         iconData: CustomIcons.linkedin,
                         onPressed: () {},
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: ScreenUtil.getInstance().setHeight(30),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "New User?",
+                        style: TextStyle(fontFamily: "Poppins-Medium"),
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          "SignUp",
+                          style: TextStyle(
+                              color: Color(0xFF5d74e3),
+                              fontFamily: "Poppins-Bold"),
+                        ),
                       )
                     ],
                   )
