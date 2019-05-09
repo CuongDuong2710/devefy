@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'widgets/FormCard.dart';
 
 void main() => runApp(MaterialApp(
       home: MyApp(),
@@ -62,19 +63,7 @@ class _MyAppState extends State<MyApp> {
                   SizedBox(
                     height: ScreenUtil.getInstance().setHeight(180),
                   ),
-                  Container(
-                    width: double.infinity,
-                    height: ScreenUtil.getInstance().setHeight(500),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8.0),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black12,
-                              offset: Offset(0.0, 15.0),
-                              blurRadius: 15.0)
-                        ]),
-                  )
+                  FormCard(),
                 ],
               ),
             ),
